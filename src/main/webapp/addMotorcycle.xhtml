@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h:form id="motorcycleForm">
+            
+			<h:panelGrid columns="2">
+			
+				<h:outputText value="#{msg.motorcycleBrandLabel}" />
+				<h:selectOneMenu id="brandString" value="#{motorcycleBean.motorcycle.brandString}">
+					  <f:selectItem id="Ducati" itemLabel="Ducati" itemValue="Ducati" />
+					  <f:selectItem id="Aprillia" itemLabel="Aprillia" itemValue="Aprillia" />
+					  <f:selectItem id="Honda" itemLabel="Honda" itemValue="Honda" />
+					  <f:selectItem id="Yamaha" itemLabel="Yamaha" itemValue="Yamaha" />
+					  <f:selectItem id="Suzuki" itemLabel="Suzuki" itemValue="Suzuki" />
+					  <f:selectItem id="BMW" itemLabel="BMW" itemValue="BMW" />
+					  <f:selectItem id="Kawasaki" itemLabel="Kawasaki" itemValue="Kawasaki" />
+				</h:selectOneMenu>	
+
+				<h:outputText value="#{msg.motorcycleModelLabel}" />
+				<h:inputText id="model" value="#{motorcycleBean.motorcycle.model}" required="#{true}">
+ 					<f:validator validatorId="motorcycleModelValidator" /> 
+				</h:inputText>
+
+				<h:outputText value="#{msg.motorcyclePriceLabel}" />
+				<h:inputText id="price" value="#{motorcycleBean.motorcycle.price}" required="#{true}" />
+				
+				<h:outputText value="#{msg.motorcycleYearOfManufactureLabel}" />
+				<h:inputText id="yearOfManufacture" value="#{motorcycleBean.motorcycle.yearOfManufacture}" required="#{true}" />
+				
+
+
+			</h:panelGrid>
+			
+			<h:commandButton value="#{msg.motorcycleFormOKButton}"
+				action="#{motorcycleBean.addMotorcycle}" />
+
+
+			<h:panelGrid>
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
