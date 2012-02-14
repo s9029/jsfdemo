@@ -10,20 +10,24 @@
 </h:head>
 <h:body>
   <h:outputStylesheet library="css" name="default.css" target="body" />
-  <div>
-	  <div class="heading">
+  <div id="all">
+	  <div id="head">
 		  <ui:insert name="heading">
 	       #{msg.mainHeading}
 	     </ui:insert>
-	  </div>		
-	  <div class="menu">
+	  </div>
+	  <div>		
+	  <div id="menu">
 		   <ui:insert name="menu">
 	         <ui:include src="/views/main/menu.xhtml" />
 	       </ui:insert>
 	  </div>
-	  <div class="content">
+	  <div id="content">
 		     <ui:insert name="content" />
-	  </div>		
+	  </div>
+	  <div style="clear: both;"></div>
+	  </div>
+	  <div style="color: #ffffff;">Autor: #{msg.autor}</div>		
   </div>
 </h:body>
 </html>

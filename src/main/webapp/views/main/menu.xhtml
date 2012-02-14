@@ -5,33 +5,28 @@
 	xmlns:h="http://java.sun.com/jsf/html">
   <div>
 	<h:form>
-	  <ul>
-		<li>
 		  <h:commandLink action="home?faces-redirect=true">
 			<h:outputText value="#{msg.linkHome}" /> 
 		  </h:commandLink>
-		</li>
-		<li>
+		  <div>
+		  #{msg.clients}
 		  <h:commandLink action="addClient?faces-redirect=true">
 			<h:outputText value="#{msg.clientAddLabel}" />
 		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="addMotorcycle?faces-redirect=true">
-			<h:outputText value="#{msg.motorcycleAddLabel}" />
-		  </h:commandLink>
-		</li>
-		<li>
 		  <h:commandLink action="showClients?faces-redirect=true">
 			 <h:outputText value="#{msg.clientAllLabel}" />
 		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="showMotorcycles?faces-redirect=true">
-			 <h:outputText value="#{msg.motorcycleAllLabel}" />
+		  </div>
+		  <div>
+		  #{msg.cars}
+		  <h:commandLink action="addCar?faces-redirect=true">
+			<h:outputText value="#{msg.autoAddLabel}" />
 		  </h:commandLink>
-		</li>
-	</ul>
+		  <h:commandLink action="showCars?faces-redirect=true">
+			 <h:outputText value="#{msg.autoAllLabel}" />
+		  </h:commandLink>
+		  </div>
+
    </h:form>
   </div>
 </ui:composition>

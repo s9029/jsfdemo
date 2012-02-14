@@ -44,7 +44,7 @@ public class ClientFormBean implements Serializable {
 	
 	public String addClient() {
 		clientDBManager.addClient(client);
-		return "showClient";
+		return "showClients";
 	}
 		
 	public ListDataModel<Client> getAllClients() {

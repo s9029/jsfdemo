@@ -1,6 +1,6 @@
 package project;
 
-import services.MotoDBManager;
+import services.AutoDBManager;
 
 public class Main {
 
@@ -9,8 +9,8 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MotoDBManager dbMoto = new MotoDBManager();
-		dbMoto.addMotorcycle(new Motorcycle(Brand.Honda, "CBR", 7000, 1996));
+		AutoDBManager dbAuto = new AutoDBManager();
+		dbAuto.addAuto(new Auto(AutoType.VAN, "Mercedes Vito", 1000, 1996));
 	}
 
 }

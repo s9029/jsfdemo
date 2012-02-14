@@ -7,8 +7,8 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-@FacesValidator("motorcycleModelValidator")
-public class MotorcycleModelValidator implements Validator {
+@FacesValidator("autoModelValidator")
+public class AutoModelValidator implements Validator {
 
 	@Override
 	public void validate(FacesContext context, UIComponent component, Object value)
@@ -16,10 +16,10 @@ public class MotorcycleModelValidator implements Validator {
 		
 		String model = (String) value;
 		
-		if (model.length() < 2) {
+		if (model.length() < 3) {
 			FacesMessage message = new FacesMessage();
-			message.setDetail("Nazwa musi składać się z conajmniej 2 znaki");
-			message.setSummary("Nazwa musi składać się z conajmniej 2 znaki");
+			message.setDetail("Nazwa modelu musi składać się z conajmniej 3 znakow");
+			message.setSummary("Nazwa modelu musi składać się z conajmniej 3 znakow");
 			message.setSeverity(FacesMessage.SEVERITY_ERROR);
 			throw new ValidatorException(message);
 		}

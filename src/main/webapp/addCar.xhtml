@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h:form id="autoForm">
+            
+			<h:panelGrid columns="2">
+			
+				<h:outputText value="#{msg.autoTypeLabel}" />
+				<h:selectOneMenu id="autoTypeString" value="#{autoBean.auto.autoTypeString}">
+					  <f:selectItem id="VAN" itemLabel="VAN" itemValue="VAN" />
+					  <f:selectItem id="Hatchback" itemLabel="Hatchback" itemValue="Hatchback" />
+					  <f:selectItem id="Sedan" itemLabel="Sedan" itemValue="Sedan" />
+					  <f:selectItem id="Kombi" itemLabel="Kombi" itemValue="Kombi" />
+					  <f:selectItem id="Limuzyna" itemLabel="Limuzyna" itemValue="Limuzyna" />
+				</h:selectOneMenu>	
+
+				<h:outputText value="#{msg.autoModelLabel}" />
+				<h:inputText id="model" value="#{autoBean.auto.model}" required="#{true}">
+ 					<f:validator validatorId="autoModelValidator" /> 
+				</h:inputText>
+
+				<h:outputText value="#{msg.autoPriceLabel}" />
+				<h:inputText id="price" value="#{autoBean.auto.price}" required="#{true}" />
+				
+				<h:outputText value="#{msg.autoYearOfManufactureLabel}" />
+				<h:inputText id="yearOfManufacture" value="#{autoBean.auto.yearOfManufacture}" required="#{true}" />
+				
+
+
+			</h:panelGrid>
+			
+			<h:commandButton value="#{msg.autoFormOKButton}"
+				action="#{autoBean.addAuto}" />
+
+
+			<h:panelGrid>
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

@@ -10,12 +10,12 @@ public class Client {
 	public String firstName;
 	public String surname;
 	
-	List<Motorcycle> listOfMotorcycle = new ArrayList<Motorcycle>();
+	List<Auto> listOfCars = new ArrayList<Auto>();
 
 	public Client(String firstName, String surname) {
 		this.firstName = firstName;
 		this.surname = surname;
-		this.listOfMotorcycle = new ArrayList<Motorcycle>();
+		this.listOfCars = new ArrayList<Auto>();
 		
 	}
 	
@@ -37,11 +37,11 @@ public class Client {
 		this.surname = surname;
 	}
 
-	public List<Motorcycle> getListOfMotorcycle() {
-		return listOfMotorcycle;
+	public List<Auto> getListOfCars() {
+		return listOfCars;
 	}
 
-	public void setlistOfMotorcycle(List<Motorcycle> listOfMotorcycle) {
-		this.listOfMotorcycle = listOfMotorcycle;
+	public void setlistOfAuto(List<Auto> listOfAuto) {
+		this.listOfCars = listOfAuto;
 	}
 }
